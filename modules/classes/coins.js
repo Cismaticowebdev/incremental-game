@@ -1,4 +1,4 @@
-export default class Coins {
-   static name;
-   static quantity;
+export class Coins {
+   static name = 'Coins';
+   static quantity = 0;
 }
