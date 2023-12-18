@@ -1,10 +1,6 @@
 import { Coins } from './classes/coins.js';
 import { Upgrade } from './classes/upgrades.js'
 
-const coinTotal = document.getElementById('coin-total');
-const coinPerSecond = document.getElementById('coin-per-second');
-const upgrade1SpanLevel = document.getElementById('upgrade1-span-level');
-const upgrade1SpanCost = document.getElementById('upgrade1-span-cost');
 const upgrade1Btn = document.getElementById('upgrade1-btn');
 const upgrade2Btn = document.getElementById('upgrade2-btn');
 const upgrade3Btn = document.getElementById('upgrade3-btn');
@@ -35,13 +31,41 @@ upgradeBtnArray.forEach((upgradeBtn, index) => {
 
 function updateScreen() {
     updateCoins();
-    upgrade1SpanLevel.textContent = `${upgrade1.level}`;
-    upgrade1SpanCost.textContent = `${upgrade1.cost}`;
+    updateUpgrades();
 }
 
 function updateCoins() {
+    const coinTotal = document.getElementById('coin-total');
+    const coinPerSecond = document.getElementById('coin-per-second');
     coinTotal.textContent = `${Coins.quantity}`;
     coinPerSecond.textContent = `${Coins.quantityPerSecond}`;
+}
+
+function updateUpgrades() {
+    const upgrade1SpanLevel = document.getElementById('upgrade1-span-level');
+    const upgrade1SpanCost = document.getElementById('upgrade1-span-cost');
+    upgrade1SpanLevel.textContent = `${upgrade1.level}`;
+    upgrade1SpanCost.textContent = `${upgrade1.cost}`;
+
+    const upgrade2SpanLevel = document.getElementById('upgrade2-span-level');
+    const upgrade2SpanCost = document.getElementById('upgrade2-span-cost');
+    upgrade2SpanLevel.textContent = `${upgrade2.level}`;
+    upgrade2SpanCost.textContent = `${upgrade2.cost}`;
+
+    const upgrade3SpanLevel = document.getElementById('upgrade3-span-level');
+    const upgrade3SpanCost = document.getElementById('upgrade3-span-cost');
+    upgrade3SpanLevel.textContent = `${upgrade3.level}`;
+    upgrade3SpanCost.textContent = `${upgrade3.cost}`;
+
+    const upgrade4SpanLevel = document.getElementById('upgrade4-span-level');
+    const upgrade4SpanCost = document.getElementById('upgrade4-span-cost');
+    upgrade4SpanLevel.textContent = `${upgrade4.level}`;
+    upgrade4SpanCost.textContent = `${upgrade4.cost}`;
+
+    const upgrade5SpanLevel = document.getElementById('upgrade5-span-level');
+    const upgrade5SpanCost = document.getElementById('upgrade5-span-cost');
+    upgrade5SpanLevel.textContent = `${upgrade5.level}`;
+    upgrade5SpanCost.textContent = `${upgrade5.cost}`;
 }
 
 
