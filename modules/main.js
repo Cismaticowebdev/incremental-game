@@ -14,15 +14,20 @@ upgrade1Btn.addEventListener('click', function () {
         Coins.quantityPerSecond += 1;
         upgrade1.level++;
         upgrade1.updateCost();
+        upgrade1SpanLevel.textContent = `${upgrade1.level}`;
+        upgrade1SpanCost.textContent = `${upgrade1.cost}`;
+        updateScreen();
     }
 });
 
-function gameLoop() {
-    Coins.quantity += Coins.quantityPerSecond;
+function updateScreen() {
     coinTotal.textContent = `${Coins.quantity}`;
     coinPerSecond.textContent = `${Coins.quantityPerSecond}`;
-    upgrade1SpanLevel.textContent = `${upgrade1.level}`;
-    upgrade1SpanCost.textContent = `${upgrade1.cost}`;
+}
+
+function gameLoop() {
+    Coins.quantity += Coins.quantityPerSecond;
+    updateScreen();
 }
 
 setInterval(gameLoop, 1000);
