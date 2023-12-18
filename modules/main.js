@@ -37,8 +37,8 @@ function updateScreen() {
 function updateCoins() {
     const coinTotal = document.getElementById('coin-total');
     const coinPerSecond = document.getElementById('coin-per-second');
-    coinTotal.textContent = `${Coins.quantity}`;
-    coinPerSecond.textContent = `${Coins.quantityPerSecond}`;
+    coinTotal.textContent = `${Coins.getQuantity()}`;
+    coinPerSecond.textContent = `${Coins.getQuantityPerSecond()}`;
 }
 
 function updateUpgrades() {
