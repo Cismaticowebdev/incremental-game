@@ -8,11 +8,11 @@ const upgrade4Btn = document.getElementById('upgrade4-btn');
 const upgrade5Btn = document.getElementById('upgrade5-btn');
 const upgradeBtnArray = new Array;
 upgradeBtnArray.push(upgrade1Btn, upgrade2Btn, upgrade3Btn, upgrade4Btn, upgrade5Btn);
-const upgrade1 = new Upgrade('Upgrade 1', 10);
-const upgrade2 = new Upgrade('Upgrade 2', 100);
-const upgrade3 = new Upgrade('Upgrade 3', 2000);
-const upgrade4 = new Upgrade('Upgrade 4', 30000);
-const upgrade5 = new Upgrade('Upgrade 5', 500000);
+const upgrade1 = new Upgrade('Upgrade 1', 10, 100);
+const upgrade2 = new Upgrade('Upgrade 2', 100, 10);
+const upgrade3 = new Upgrade('Upgrade 3', 2000, 50);
+const upgrade4 = new Upgrade('Upgrade 4', 30000, 100);
+const upgrade5 = new Upgrade('Upgrade 5', 500000, 200);
 const upgradeArray = new Array;
 upgradeArray.push(upgrade1, upgrade2, upgrade3, upgrade4, upgrade5);
 
@@ -21,7 +21,7 @@ upgradeBtnArray.forEach((upgradeBtn, index) => {
     upgradeBtn.addEventListener('click', function () {
         if (upgrade.cost <= Coins.quantity) {
             Coins.quantity -= upgrade.cost;
-            Coins.quantityPerSecond += 1;
+            Coins.quantityPerSecond += upgrade.coinsProduction;
             upgrade.level++;
             upgrade.updateCost();
             updateScreen();
