@@ -8,7 +8,7 @@ const upgrade4Btn = document.getElementById('upgrade4-btn');
 const upgrade5Btn = document.getElementById('upgrade5-btn');
 const upgradeBtnArray = new Array;
 upgradeBtnArray.push(upgrade1Btn, upgrade2Btn, upgrade3Btn, upgrade4Btn, upgrade5Btn);
-const upgrade1 = new Upgrade('Upgrade 1', 10, 100);
+const upgrade1 = new Upgrade('Upgrade 1', 10, 1);
 const upgrade2 = new Upgrade('Upgrade 2', 100, 10);
 const upgrade3 = new Upgrade('Upgrade 3', 2000, 50);
 const upgrade4 = new Upgrade('Upgrade 4', 30000, 100);
