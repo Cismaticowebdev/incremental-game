@@ -6,23 +6,38 @@ const coinPerSecond = document.getElementById('coin-per-second');
 const upgrade1SpanLevel = document.getElementById('upgrade1-span-level');
 const upgrade1SpanCost = document.getElementById('upgrade1-span-cost');
 const upgrade1Btn = document.getElementById('upgrade1-btn');
-const upgrade1 = new Upgrade('Upgrade 1', 0, 0);
+const upgrade2Btn = document.getElementById('upgrade2-btn');
+const upgrade3Btn = document.getElementById('upgrade3-btn');
+const upgrade4Btn = document.getElementById('upgrade4-btn');
+const upgrade5Btn = document.getElementById('upgrade5-btn');
+const upgradeBtnArray = new Array;
+upgradeBtnArray.push(upgrade1Btn, upgrade2Btn, upgrade3Btn, upgrade4Btn, upgrade5Btn);
+const upgrade1 = new Upgrade('Upgrade 1', 10);
+const upgrade2 = new Upgrade('Upgrade 2', 10);
+const upgrade3 = new Upgrade('Upgrade 3', 10);
+const upgrade4 = new Upgrade('Upgrade 4', 10);
+const upgrade5 = new Upgrade('Upgrade 5', 10);
+const upgradeArray = new Array;
+upgradeArray.push(upgrade1, upgrade2, upgrade3, upgrade4, upgrade5);
 
-upgrade1Btn.addEventListener('click', function () {
-    if (upgrade1.cost <= Coins.quantity) {
-        Coins.quantity -= upgrade1.cost;
-        Coins.quantityPerSecond += 1;
-        upgrade1.level++;
-        upgrade1.updateCost();
-        upgrade1SpanLevel.textContent = `${upgrade1.level}`;
-        upgrade1SpanCost.textContent = `${upgrade1.cost}`;
-        updateScreen();
-    }
+upgradeBtnArray.forEach((upgradeBtn, index) => {
+    let upgrade = upgradeArray[index];
+    upgradeBtn.addEventListener('click', function () {
+        if (upgrade.cost <= Coins.quantity) {
+            Coins.quantity -= upgrade.cost;
+            Coins.quantityPerSecond += 1;
+            upgrade.level++;
+            upgrade.updateCost();
+            updateScreen();
+        }
+    });
 });
 
 function updateScreen() {
     coinTotal.textContent = `${Coins.quantity}`;
     coinPerSecond.textContent = `${Coins.quantityPerSecond}`;
+    upgrade1SpanLevel.textContent = `${upgrade1.level}`;
+    upgrade1SpanCost.textContent = `${upgrade1.cost}`;
 }
 
 function gameLoop() {

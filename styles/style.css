@@ -22,3 +22,7 @@ button {
     padding: 2rem;
     font-size: inherit;
 }
+
+.hidden {
+    display: none;
+}

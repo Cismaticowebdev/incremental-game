@@ -2,15 +2,17 @@ import { Coins } from "./coins.js";
 
 export class Upgrade {
     name;
+    initialCost;
     cost;
     level;
-    constructor(name, cost) {
+    constructor(name, initialCost) {
         this.name = name;
-        this.cost = cost;
-        this.level = 0;
+        this.initialCost = initialCost;
+        this.level = 1;
+        this.cost = initialCost;
     }
 
     updateCost() {
-        this.cost = 10 * this.level;
+        this.cost = this.initialCost * this.level;
     }
 }
