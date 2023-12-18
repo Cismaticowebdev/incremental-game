@@ -34,10 +34,14 @@ upgradeBtnArray.forEach((upgradeBtn, index) => {
 });
 
 function updateScreen() {
-    coinTotal.textContent = `${Coins.quantity}`;
-    coinPerSecond.textContent = `${Coins.quantityPerSecond}`;
+    updateCoins();
     upgrade1SpanLevel.textContent = `${upgrade1.level}`;
     upgrade1SpanCost.textContent = `${upgrade1.cost}`;
+}
+
+function updateCoins() {
+    coinTotal.textContent = `${Coins.quantity}`;
+    coinPerSecond.textContent = `${Coins.quantityPerSecond}`;
 }
 
 
