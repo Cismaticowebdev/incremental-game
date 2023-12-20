@@ -108,7 +108,7 @@ function resetGame() {
 
   // Hide all buttons but the first one
   for (let i = 1; i < upgradeBtnArray.length; i++) {
-    upgradeBtnArray.pop();
+    upgradeBtnArray[i].classList.add("hidden");
   }
 
   // Reset all the upgrades
